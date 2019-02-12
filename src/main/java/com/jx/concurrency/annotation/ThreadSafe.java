@@ -1,9 +1,14 @@
 package com.jx.concurrency.annotation;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Repeatable;
-import java.lang.annotation.Target;
+import java.lang.annotation.*;
 
+
+/**
+ * 用来标记{线程安全}的类或者写法
+ */
 @Target(ElementType.TYPE)
+@Retention(RetentionPolicy.SOURCE)
 public @interface ThreadSafe {
+
+    String value() default "";
 }
